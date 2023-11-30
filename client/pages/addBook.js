@@ -8,16 +8,22 @@ export default function () {
   `
 }
 
-function addBook() {
+async function addBook() {
   const bookName = $("[name=bookName]").val()
   console.log(bookName)
 
   if (bookName.trim().length > 0) {
-    const response = fetch("api/books", {
+    const response = await fetch("api/books", {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: bookName })
     })
+    const result = await response.json()
+
+    if (result.bookAdded) {
+      alert(`${bookName.trim()} was added`)
+      $("[name=bookName]").val("")
+    }
   } else {
     alert("Du måste skriva något!")
   }

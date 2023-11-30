@@ -1,3 +1,5 @@
+import editBook from "./editBook.js";
+
 export default async function () {
   const booksData = await getBooks();
 
@@ -20,8 +22,8 @@ function createBooksTable(booklist) {
   for (let book of booklist) {
     books += `
     <tr>
-    <td>${index}</td>
-    <td>${book.name}</td>
+      <td>${index}</td>
+      <td onclick="openEditPage(${book.id})">${book.name}</td>
     </tr>
     `
     index++;
@@ -46,3 +48,9 @@ function createBooksTable(booklist) {
 
 
 }
+
+async function openEditPage(bookId) {
+  $("main").html(await editBook(bookId))
+}
+
+window.openEditPage = openEditPage
