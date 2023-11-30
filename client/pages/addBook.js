@@ -3,7 +3,7 @@ export default function () {
   <h1>Add new book!</h1>
   <form onsubmit="addBook(); return false">
     <input type="text" name="bookName" placeholder="Book name">
-    <input type="submit" value="Add Book">
+    <input id="submit" type="submit" value="Add Book">
   </form>
   `
 }

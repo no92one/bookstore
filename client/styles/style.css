@@ -91,3 +91,26 @@ th,
 td {
   padding: 2px 10px;
 }
+
+button {
+  padding: 5px 30px;
+  border-radius: 15px;
+}
+
+.buttonArea {
+  margin-top: 5vh;
+}
+
+#back {
+  background-color: var(--yellow);
+}
+
+#delete {
+  background-color: var(--red);
+}
+
+#submit {
+  padding: 5px 30px;
+  border-radius: 15px;
+  background-color: var(--green);
+}

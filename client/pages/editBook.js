@@ -12,10 +12,12 @@ export default async function (bookId) {
       <h1>Edit Page for: ${book.id} - ${book.name}</h1>
       <form onsubmit="updateBook(${book.id}); return false">
         <input type="text" name="bookName" placeholder="Book name" value="${book.name}">
-        <input type="submit" value="Update book">
+        <input id="submit" type="submit" value="Update book">
       </form>
-      <button onclick="goBackToBooklist()">Go back</button>
-      <button onclick="deleteBook(${book.id})">Delete</button>
+      <div class="buttonArea"> 
+        <button id="back" onclick="goBackToBooklist()">Go back</button>
+        <button id="delete" onclick="deleteBook(${book.id})">Delete</button>
+      <div>
     `
   }
 }
